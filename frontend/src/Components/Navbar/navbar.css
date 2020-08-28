@@ -1,0 +1,54 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+nav
+{
+    background: rgb(211, 211, 211);
+    height: 8%;
+    padding: 1rem;
+}
+
+ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    height: 100%;
+}
+
+nav ul h1
+{
+    position: static;
+    font-size: 2rem;
+    margin: 0;
+    text-decoration: none;
+}
+
+nav ul a
+{
+    text-decoration-line: none;
+}
+
+nav span
+{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav ul div
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25%;
+}
+
+nav ul div .btn-danger
+{
+    width: 20%;
+}

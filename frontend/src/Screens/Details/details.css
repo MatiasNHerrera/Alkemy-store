@@ -1,0 +1,103 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.cnt-details
+{
+    background: rgba(218, 218, 218, 0.6);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-card
+{
+    background: #fff;
+    width: 50%;
+    height: 60%;
+}
+
+.details-grid
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+}
+
+.app-details-img
+{
+    background-size: cover;
+}
+
+.app-details-description
+{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.app-description
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.app-description h3
+{
+    font-weight: bold;
+}
+
+.app-description p
+{
+    letter-spacing: 2px;
+    color: rgb(45, 45, 211);
+}
+
+.app-description b
+{
+    color: rgb(165, 36, 36);
+}
+
+.app-modify form
+{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+.modify-card
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    border-radius: 5px;
+    height: 50%;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 2px 0.4px black;
+    padding: 2rem;
+    visibility: hidden;
+}
+
+.app-details-actions
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.app-details-actions button
+{
+    width: 7rem;
+}
+
+@keyframes modify-card
+{
+    0%{ transform: translateY(-35px); opacity: 0;}
+    100%{transform: translateY(0px); opacity: 1;}
+}

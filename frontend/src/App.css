@@ -1,0 +1,12 @@
+h1
+{
+    position: relative;
+    top: 4rem;
+    font-family: 'google';
+    font-size: 3.5rem;
+}
+
+.cnt-main
+{
+    height: 100%;
+}
