@@ -7,7 +7,7 @@ import './loginAndRegister.css';
 export const LoginAndRegister = () => {
     return (
         <div className="cnt-login-register">
-            <h1>Alkemy Store</h1>
+            <h1>Code Store</h1>
             <Switch>
                 <Route exact path="/register" component={ Register }></Route>
                 <Route exact path="/login" component={ Login }></Route>

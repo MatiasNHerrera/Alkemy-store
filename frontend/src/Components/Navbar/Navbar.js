@@ -17,7 +17,7 @@ export const Navbar = ({history}) => {
     return (
         <nav>
             <ul>
-                <Link to="/me/home"><h1>Alkemy Store</h1></Link>
+                <Link to="/me/home"><h1>Code Store</h1></Link>
                 <div>
                     <span>{ user.email }</span>
                     <button
