@@ -9,11 +9,11 @@ export const AddApp = ({ user }) => {
         name: '',
         category: '',
         price: 0,
-    })
+    });
+    
+    const { name, category, price } = form;
 
     const [file, setFile] = useState(null);
-
-    const { name, category, price } = form;
 
     const handleChange = (e) => {
 
@@ -28,11 +28,8 @@ export const AddApp = ({ user }) => {
         e.preventDefault();
 
         let formData = new FormData();
-
         formData.append('form', JSON.stringify(form));
         formData.append('file', file);
-
-        console.log(formData)
 
         axios.post("http://localhost:8000/create/app", formData, { headers: { Accept : 'multipart/form-data' } })
             .then(({data}) => {

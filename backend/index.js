@@ -84,6 +84,19 @@ app.post('/create/app',  upload.single('file'), (req, res) => {
 
 })
 
+app.get('/apps', (req, res) => {
+
+    let id = req.params.id;
+
+    con.query(`SELECT * FROM applications ORDER BY name ASC`, (error, results) => {
+
+        if(error)
+            res.send(error)
+        else
+            res.send(results);
+    })
+})
+
 
 app.get('/apps/:id', (req, res) => {
 
@@ -109,7 +122,7 @@ app.get('/category/:id', (req, res) => {
     })
 })
 
-app.get('/category/all', (req, res) => {
+app.get('/categories', (req, res) => {
 
     con.query(`SELECT DISTINCT category FROM applications`, (error, results) => {
 
@@ -167,6 +180,90 @@ app.delete('/delete/:id', (req, res) => {
             res.send(results);
     })
 
+})
+
+app.post('/buy', (req,res) => {
+
+    con.query(`SELECT * from buys WHERE id_application=${req.body.id_application} AND id_user=${req.body.id_user}`, (error, results) => {
+
+        if(results.length == 0){
+            con.query(`INSERT INTO buys (id_application, id_user) values(${req.body.id_application}, ${req.body.id_user})`, (error, results) => {
+                error ? res.send(error) : res.send({
+                    msg: 'Compra realizada con exito!', option: 'success'
+                });
+            });
+        }
+        else
+        {
+            res.send({
+                msg: 'Ya se ha comprado este producto', option: 'error'
+            });
+        }
+    })
+})
+
+app.post('/favorites', (req,res) => {
+
+    con.query(`SELECT * from favorites WHERE id_application=${req.body.id_application} AND id_user=${req.body.id_user}`, (error, results) => {
+
+        if(results.length == 0){
+            con.query(`INSERT INTO favorites (id_application, id_user) values(${req.body.id_application}, ${req.body.id_user})`, (error, results) => {
+                error ? res.send(error) : res.send({
+                    msg: 'Agregado con exito!', option: 'success'
+                });
+            });
+        }
+        else
+        {
+            res.send({
+                msg: 'Ya se encuentra en favoritos', option: 'error'
+            });
+        }
+    })
+})
+
+app.get('/favorites/:id', (req,res) => {
+    
+    con.query(`SELECT * FROM applications INNER JOIN favorites WHERE favorites.id_application = applications.id_application AND favorites.id_user=${req.params.id}`, (error, results) => {
+        
+        if(error)
+            res.send(error)
+        else
+            res.send(results);
+    });
+})
+
+app.get('/favorites/categories/:id', (req,res) => {
+    
+    con.query(`SELECT DISTINCT category FROM applications INNER JOIN favorites WHERE favorites.id_application = applications.id_application AND favorites.id_user=${req.params.id}`, (error, results) => {
+        
+        if(error)
+            res.send(error)
+        else
+            res.send(results);
+    });
+})
+
+app.get('/buys/:id', (req,res) => {
+    
+    con.query(`SELECT * FROM applications INNER JOIN buys WHERE buys.id_application = applications.id_application AND buys.id_user=${req.params.id}`, (error, results) => {
+        
+        if(error)
+            res.send(error)
+        else
+            res.send(results);
+    });
+})
+
+app.get('/buys/categories/:id', (req,res) => {
+    
+    con.query(`SELECT DISTINCT category FROM applications INNER JOIN buys WHERE buys.id_application = applications.id_application AND buys.id_user=${req.params.id}`, (error, results) => {
+        
+        if(error)
+            res.send(error)
+        else
+            res.send(results);
+    });
 })
 
 

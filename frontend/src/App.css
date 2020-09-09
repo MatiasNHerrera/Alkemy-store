@@ -10,3 +10,11 @@ h1
 {
     height: 100%;
 }
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+  h1
+  {
+      position: absolute;
+  }
+}

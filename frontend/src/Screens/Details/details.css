@@ -64,6 +64,7 @@
 
 .app-modify form
 {
+    position: relative;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -96,8 +97,55 @@
     width: 7rem;
 }
 
+.details-msg
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(46, 168, 175);
+    width: 85%;
+    height: 12%;
+    border-radius: 5px;
+    bottom: 25%;
+    padding: 2rem;
+    animation: opacity 2s ease-in forwards;
+}
+
+.details-msg span
+{
+    color: ghostwhite;
+    font-weight: bold;
+}
+
+svg
+{
+    color: ghostwhite;
+}
+
 @keyframes modify-card
 {
     0%{ transform: translateY(-35px); opacity: 0;}
     100%{transform: translateY(0px); opacity: 1;}
+}
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    .details-card
+    {
+        height: 100%;
+        width: 100%;
+    }
+
+    .details-grid
+    {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .app-details-description
+    {
+        grid-template-columns: 1fr;
+    }
 }

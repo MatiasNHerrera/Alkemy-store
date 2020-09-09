@@ -8,7 +8,7 @@
 {
     display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     flex-flow: column;
     padding: 2rem;
@@ -84,4 +84,17 @@
 .name-category, .app-price
 {
     padding: 0.3rem;
+}
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    .app-card
+    {
+        margin: 2rem 0rem 2rem 0 
+    }
+
+    .list-app-category
+    {
+        width: 100%;
+    }
 }

@@ -102,3 +102,22 @@ p
     80%{opacity: 1;}
     100%{opacity: 0;}
 }
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    .cnt-login form
+    {
+        width: 80%;
+        height: 50%;
+    }
+
+    .form-input-cnt, button, .form-input-submit-login
+    {
+        width: 70%;
+    }
+
+    .form-input-submit-login
+    {
+        text-align: center;
+    }
+}

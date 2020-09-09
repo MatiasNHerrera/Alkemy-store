@@ -64,3 +64,22 @@ label
     cursor: pointer;
     margin-left: 0.4rem;
 }
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    .cnt-register form
+    {
+        width: 80%;
+        height: 50%;
+    }
+
+    .form-input-cnt, button, .form-input-submit-register
+    {
+        width: 70%;
+    }
+
+    .form-input-submit-register
+    {
+        text-align: center;
+    }
+}

@@ -10,3 +10,12 @@
     grid-template-columns: 25rem 1fr;
     height: 92%;
 }
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    .cnt-apps
+    {
+        grid-template-columns: 1fr;   
+        grid-template-rows: 35rem; 
+    }
+}

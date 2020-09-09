@@ -1,0 +1,57 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.favs-buys-title
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favs-buys-title h2
+{
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.cnt-favs-buys
+{
+    background: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column;
+    height: 27rem;
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #727272;
+}
+
+.cnt-favs-buys button
+{
+    height: 15%;
+    width: 70%;
+    border: none;
+    border-radius: 35px;
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    background-size: 300% 100%;
+    box-shadow: 1px 5px 0px 0 rgba(229, 66, 10, 0.75);
+    color: ghostwhite;
+    font-weight: bold;
+    transition: 0.5s;
+    outline: none;
+}
+
+.cnt-favs-buys button:hover
+{
+    background-position: 100% 0;
+}
+
+.cnt-favs-buys button:active
+{
+    box-shadow: 1px 2px 0px 0 rgba(229, 66, 10, 0.75);
+}

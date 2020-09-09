@@ -2,30 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './appList.css';
 import axios from 'axios';
 
-export const AppList = ({ user : { user, history } }) => {
+export const AppList = ({ user : { user, history, list, categories } }) => {
 
-    const [appList, setAppList] = useState([])
-    const [categories, setCategories] = useState([])
-
-
-    useEffect(() => {
-
-        if(user.user_type == 'Desarrollador'){
-
-            axios(`http://localhost:8000/category/${user.id}`)
-                 .then(({data}) => {
-                    setCategories(data);
-
-                 })
-
-            axios(`http://localhost:8000/apps/${user.id}`)
-                 .then(({data}) => {
-                     setAppList(data);
-                 })
-         }
-
-    }, []);
-    
     const openDetails = (id) => {
         history.push(`/details/${ id }`)
     }
@@ -39,7 +17,7 @@ export const AppList = ({ user : { user, history } }) => {
                             <h3>{ category.category }</h3>
                             <div className="list-app-category">
                                 {
-                                    appList.map(app => {
+                                    list.map(app => {
                                 
                                         return app.category == category.category && 
                                                 <div key={ app.id_application } className="app-card">

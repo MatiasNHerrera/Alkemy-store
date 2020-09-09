@@ -8,6 +8,8 @@ import { PrivateRoutes } from './Routes/PrivateRouter';
 import { useSelector } from 'react-redux';
 import { Login } from './Screens/Login/Login';
 import { Details } from './Screens/Details/Details';
+import { Favs } from './Components/Favs/Favs';
+import { Buys } from './Components/Buys/Buys';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
             <Switch>
               <PrivateRoutes path="/me/apps" component={ Home } isAuthenticated={ user.isLogged ? user.isLogged : false }/>
               <PrivateRoutes path="/details/:id" component={ Details } isAuthenticated={ user.isLogged ? user.isLogged : false }/>
+              <PrivateRoutes path="/me/favs" component={ Favs } isAuthenticated={ user.isLogged ? user.isLogged : false }/>
+              <PrivateRoutes path="/me/buys" component={ Buys } isAuthenticated={ user.isLogged ? user.isLogged : false }/>
               <Route path="/" component={ LoginAndRegister }/>
             </Switch>
           </div>

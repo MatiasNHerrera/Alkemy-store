@@ -52,3 +52,16 @@ nav ul div .btn-danger
 {
     width: 20%;
 }
+
+@media (max-width: 500px) and (max-height: 813px)
+{
+    nav span
+    {
+        display: none;
+    }
+
+    nav ul div .btn-danger
+    {
+        width: 100%;
+    }
+}
